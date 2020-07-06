@@ -1,0 +1,25 @@
+Package: hyperworkshop
+Title: Efficient, Scalable, and Reproducible Enrichment Workflows
+Version: 1.5.0
+Authors@R: c(person(given="Anthony", family="Federico", email="anfed@bu.edu", 
+             role=c("aut", "cre")),
+             person(given="Stefano", family="Monti", email="smonti@bu.edu", 
+             role=c("aut")))
+Description: A workshop for working with hypeR.
+Depends: R (>= 4.0.0)
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+LazyData: true
+Imports:
+    tidyverse,
+    hypeR
+Suggests:
+    devtools,
+    testthat,
+    knitr
+biocViews: GeneSetEnrichment, Annotation, Pathways
+VignetteBuilder: knitr
+BugReports: https://github.com/montilab/hypeR-workshop/issues
+URL: https://montilab.github.io/hypeR-workshop/
+DockerImage: montilab/hypeR-workshop:latest

@@ -1,0 +1,14 @@
+url: https://montilab.github.io/hypeR-workshop
+
+template:
+  params:
+    bootswatch: flatly
+
+home:
+  title: "hypeR Workshop"
+  type: inverse
+
+navbar:
+  right:
+   - icon: fa-github
+     href: https://github.com/montilab/hypeR-workshop
