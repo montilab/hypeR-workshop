@@ -1,0 +1,10 @@
+pandoc: 2.7.3
+pkgdown: 1.5.1
+pkgdown_sha: ~
+articles:
+  hyper_workshop: hyper_workshop.html
+last_built: 2020-07-08T16:31Z
+urls:
+  reference: https://montilab.github.io/hypeR-workshop/reference
+  article: https://montilab.github.io/hypeR-workshop/articles
+

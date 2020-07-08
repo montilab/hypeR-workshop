@@ -19,6 +19,10 @@ output:
     toc_depth: 3
 editor_options: 
   chunk_output_type: console
+resource_files:
+  - WGCNA-Example.png
+  - Excel-Example.png
+  - Shiny-Example.png
 ---
 
 ```{r, include=FALSE}
@@ -376,7 +380,7 @@ hyp_hmap(hyp_obj, top=30)
 
 Often computational biologists must process, interpret, and share large amounts of biological data. A common example is interpreting gene co-expression modules across one or more phenotype, resulting in potentially hundreds of signatures to annotate. Here we have signatures of gene co-expression modules, generated with WGCNA, for multiple breast cancer subtypes 
 
-`r knitr::include_graphics(system.file(package='hyperworkshop', 'vignettes', 'WGCNA-Example.png'))`
+![](WGCNA-Example.png)
 
 **Problem:** Annotate gene co-expression modules across one or more phenotype, resulting in potentially hundreds of signatures to annotate. 
 ## Example Data
@@ -483,7 +487,7 @@ In the case of exporting tables, reproducibility information is in the header of
 
 For excel sheets, there is a dedicated tab with reproducibility information for all signatures...
 
-`r knitr::include_graphics(system.file(package='hyperworkshop', 'vignettes', 'Excel-Example.png'))`
+![](Excel-Example.png)
 
 # Generating Reports
 
@@ -637,7 +641,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-`r knitr::include_graphics(system.file(package='hyperworkshop', 'vignettes', 'Shiny-Example.png'))`
+![](Shiny-Example.png)
 
 # Session Info
 ```{r}
