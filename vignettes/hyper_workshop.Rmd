@@ -28,8 +28,9 @@ resource_files:
 ```{r, include=FALSE}
 knitr::opts_chunk$set(comment="", cache=FALSE, messages=FALSE, warnings=FALSE, fig.align="center")
 devtools::load_all(".")
-devtools::load_all("/Users/anthonyfederico/Dropbox/Github/hypeR")
+library(hypeR)
 library(tidyverse)
+library(reactable)
 ```
 
 # Requirements
@@ -54,11 +55,16 @@ BiocManager::install("montilab/hypeR", version="devel")
 ```{r, eval=FALSE}
 library(hypeR)
 library(tidyverse)
+library(reactable)
+```
+
+# Data
+```{r}
+load(file.path(system.file("extdat", package="hyperworkshop"), "limma.rda"))
+load(file.path(system.file("extdat", package="hyperworkshop"), "wgcna.rda"))
 ```
 
 ```{r}
-data(wgcna)
-
 signatures <- wgcna[[1]]
 str(signatures)
 
@@ -118,7 +124,6 @@ genesets <- list("GSET1" = c("GENE1", "GENE2", "GENE3"),
 Using a differential expression dataframe created with Limma, we will extract a signature of upregulated genes for use with a *hypergeometric* test and rank genes descending by their differential expression level for use with a *kstest*.
 
 ```{r}
-data(limma)
 reactable(limma, rownames=FALSE)
 ```
 
@@ -313,8 +318,6 @@ fly <- enrichr_gsets("GO_Biological_Process_2018", db="FlyEnrichr")
 
 # Visualization
 ```{r}
-data(limma)
-
 signature <- limma %>% 
              dplyr::arrange(desc(t)) %>% 
              magrittr::use_series(symbol)
@@ -413,12 +416,6 @@ wgcna <- list("LA" = run.wgcna(brca.tumors, subtype="LA"),
               "LB" = run.wgcna(brca.tumors, subtype="LB"),
               "H2" = run.wgcna(brca.tumors, subtype="H2"),
               "BL" = run.wgcna(brca.tumors, subtype="BL"))
-```
-
-The data is pre-computed and can be loaded like so....
-
-```{r, include=FALSE}
-data(wgcna)
 ```
 
 Resulting 87 Signatures to Annotate...
