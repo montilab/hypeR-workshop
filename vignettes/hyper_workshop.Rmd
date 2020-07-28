@@ -17,6 +17,9 @@ output:
     toc: yes
     toc_float: false
     toc_depth: 3
+vignette: >
+  %\VignetteIndexEntry{Efficient, Scalable, and Reproducible Enrichment Workflows}
+  %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
   chunk_output_type: console
 resource_files:
