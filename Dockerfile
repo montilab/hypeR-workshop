@@ -1,5 +1,9 @@
 FROM bioconductor/bioconductor_docker:latest
 
+WORKDIR /home/rstudio
+
+COPY --chown=rstudio:rstudio . /home/rstudio/
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     apt-utils \
